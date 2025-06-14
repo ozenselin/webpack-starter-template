@@ -13,4 +13,5 @@ module.exports = {
         'no-unused-vars': 'error',
         'no-undef': 'error',
     },
-};
+    extends: "airbnb-base",
+}
