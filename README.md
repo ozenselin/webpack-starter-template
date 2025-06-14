@@ -1,6 +1,6 @@
 # Webpack Starter Template
 
-This is a minimal and structured Webpack starter template designed for modern front-end development. It includes a semantic HTML template, a well-structured CSS reset, and a modular Webpack configuration separated into development and production environments.
+This is a minimal and structured Webpack starter template designed for modern front-end development. It includes a semantic HTML template, a well-structured CSS reset, and a modular Webpack configuration separated into development and production environments. Additionally, it comes with ESLint configured with the Airbnb base style guide (excluding React) and integrated with Prettier for consistent code formatting and linting across the project.
 
 ## Scripts
 
@@ -44,16 +44,21 @@ Production-specific configuration:
 
 All development dependencies are installed under `devDependencies` in `package.json`.
 
-| Package               | Purpose                                                                 |
-|-----------------------|-------------------------------------------------------------------------|
-| `webpack`             | Core module bundler for compiling JS, CSS, HTML, and static assets.     |
-| `webpack-cli`         | CLI tools for interacting with Webpack via terminal.                    |
-| `webpack-dev-server`  | Provides live reloading and file watching during development.           |
-| `webpack-merge`       | Merges multiple Webpack configurations (used to combine common/dev/prod).|
-| `style-loader`        | Injects CSS into the DOM at runtime.                                    |
-| `css-loader`          | Resolves `@import` and `url()` in CSS files.                            |
-| `html-loader`         | Processes HTML files as modules. Used by `HtmlWebpackPlugin`.           |
-| `html-webpack-plugin` | Generates HTML files and injects the Webpack output bundle automatically.|
+| Package                    | Purpose                                                                    |
+|----------------------------|----------------------------------------------------------------------------|
+| `webpack`                  | Core module bundler for compiling JS, CSS, HTML, and static assets.        |
+| `webpack-cli`              | CLI tools for interacting with Webpack via terminal.                       |
+| `webpack-dev-server`       | Provides live reloading and file watching during development.              |
+| `webpack-merge`            | Merges multiple Webpack configurations (used to combine common/dev/prod).  |
+| `style-loader`             | Injects CSS into the DOM at runtime.                                       |
+| `css-loader`               | Resolves `@import` and `url()` in CSS files.                               |
+| `html-loader`              | Processes HTML files as modules. Used by `HtmlWebpackPlugin`.              |
+| `html-webpack-plugin`      | Generates HTML files and injects the Webpack output bundle automatically.  |
+| `eslint`                   | JavaScript linter for identifying and fixing code quality issues.          |
+| `eslint-config-airbnb-base`| Airbnb's ESLint configuration for JavaScript (without React rules).        |
+| `eslint-config-prettier`   | Disables ESLint rules that conflict with Prettier formatting.              |
+| `eslint-plugin-import`     | ESLint plugin for import/export syntax validation (Airbnb peer dependency).|
+| `prettier`                 | Code formatter for consistent code styling across the project.             |
 
 ## CSS: Reset and Modern Base Styles
 
@@ -83,6 +88,14 @@ The `style.css` file serves both as a reset and as a foundation for consistent U
 
 - **Framework Isolation**:
   - Adds `isolation: isolate` to `#root` and `#__next` containers to prevent layout issues when integrating frameworks like React or Next.js.
+
+## Linting & Formatting
+
+Basic ESLint setup paired with a Prettier configuration template that uses the default settings without modification.
+
+To ensure seamless integration and avoid rule conflicts between Prettier and Airbnb, `eslint-config-prettier` is included. Additionally, older eslintrc configuration file format is used to ensure compatibility with `eslint-config-airbnb-base`(without React). It supports both browser and Node environments and ES module syntax. A few common rules are customized to balance code quality with developer convenience.
+
+You can access the full configuration references here: 🔗 **[ESLint Rules](https://eslint.org/docs/rules/)** • 🔗 **[Prettier Options](https://prettier.io/docs/en/configuration.html)**
 
 ## License
 
